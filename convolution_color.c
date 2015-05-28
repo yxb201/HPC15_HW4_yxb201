@@ -280,6 +280,9 @@ int main(int argc, char *argv[])
   {
     CALL_CL_SAFE(clEnqueueNDRangeKernel(queue, knl, 2, NULL,
           global_size, local_size, 0, NULL, NULL));
+    
+    // copy output back to buffer
+    CALL_CL_SAFE(clEnqueueCopyBuffer(queue,buf_congray,buf_gray,0,0,deviceDataSize,0,NULL,NULL));
   }
   CALL_CL_SAFE(clFinish(queue));
   get_timestamp(&toc);

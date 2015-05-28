@@ -293,8 +293,7 @@ int main(int argc, char *argv[])
   printf("%f GBit/s\n", 4*2*xsize*ysize*sizeof(float)/1e9/elapsed);
   
   printf("%d %d %f \n", xsize,ysize, elapsed);
-  printf("%f GFlop/s\n",4.*(xsize-HALF_FILTER_WIDTH)*(ysize-HALF_FILTER_WIDTH)/1e9
-	 *FILTER_WIDTH*FILTER_WIDTH/elapsed);
+  printf("%.12f GFlop/s\n",4*(xsize-HALF_FILTER_WIDTH)*(ysize-HALF_FILTER_WIDTH)/1e9*FILTER_WIDTH*FILTER_WIDTH/elapsed);
 
   // --------------------------------------------------------------------------
   // transfer back & check

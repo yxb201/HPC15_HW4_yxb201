@@ -14,8 +14,8 @@
 #define HALF_FILTER_WIDTH 3
 
 // local size of work group
-#define WGX 16
-#define WGY 16
+#define WGX 32
+#define WGY 32
 #define NON_OPTIMIZED
 
 void print_kernel_info(cl_command_queue queue, cl_kernel knl)

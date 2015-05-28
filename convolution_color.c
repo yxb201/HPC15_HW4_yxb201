@@ -282,7 +282,7 @@ int main(int argc, char *argv[])
           global_size, local_size, 0, NULL, NULL));
     
     // copy output back to buffer
-    CALL_CL_SAFE(clEnqueueCopyBuffer(queue,buf_congray,buf_gray,0,0,deviceDataSize,0,NULL,NULL));
+    // CALL_CL_SAFE(clEnqueueCopyBuffer(queue,buf_congray,buf_gray,0,0,deviceDataSize,0,NULL,NULL));
   }
   CALL_CL_SAFE(clFinish(queue));
   get_timestamp(&toc);

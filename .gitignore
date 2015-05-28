@@ -1,3 +1,8 @@
-convolution
+convolution_color
 *.o
 *.ppm
+*.aux
+*.dvi
+*.log
+*.out
+*.gz

@@ -1,7 +1,7 @@
-EXECUTABLES = convolution_color
+EXECUTABLES = convolution_color hw4writeup
 #CC=gcc49
 
-all: $(EXECUTABLES)
+all: $(EXECUTABLES) 
 
 LDFLAGS += $(foreach librarydir,$(subst :, ,$(LD_LIBRARY_PATH)),-L$(librarydir))
 
@@ -28,6 +28,9 @@ cl-helper.o: cl-helper.c cl-helper.h
 ppma_io.o: ppma_io.c ppma_io.h
 
 convolution_color: convolution_color.o ppma_io.o cl-helper.o
+hw4writeup: hw4writeup.tex
+	pdflatex hw4writeup.tex
+
 
 clean:
-	rm -f $(EXECUTABLES) *.o
+	rm -f $(EXECUTABLES) *.o *.aux *.dvi *.pdf *.log *.out *.gz
